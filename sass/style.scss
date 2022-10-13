@@ -1,0 +1,594 @@
+@import "general";
+@import "variables";
+@import "mixin";
+
+%overlayEffect{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient($gradient);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: $white;
+        visibility: hidden;
+        opacity: 0;
+        transition:all .3s;
+}
+%carsoul{
+    padding: 50px 0;
+        .slider-icon{
+            border:  2px solid $numColor;
+            color: $numColor;
+            svg{
+                font-size: 50px;
+            }
+        }
+        p {
+            font-style: italic;
+            font-weight: normal;
+            font-size: 15px;
+            span{
+                 @include font('KaushanScript');
+                 padding-left: 70px;
+                 position: relative;
+                 &::before{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
+                    width: 50px;
+                    height: 2px;
+                    background-color:$underLine;
+                 }
+            }
+        }
+}
+//header section start
+
+header{
+    background: url("/assets/images/bg-header.jpg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient($gradient);
+       
+        }
+
+        .underlineH::after{
+            background: $white;
+        }
+        button{
+            border : 2px solid $white;
+            background-color: transparent;
+            padding: 0.525rem 2rem;
+            color:$white;
+            transform: scale(.8);
+        }
+         nav{
+          
+          .navbar-nav{
+            font-weight: 500;
+                .nav-link.active , .nav-link:hover{
+                    position: relative;
+                    color: $linkHover;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 80%;
+                        height: 2px;
+                        bottom: 0;
+                        left: 0;
+                        background: $linkHover;
+                    }
+                }
+          }
+        }
+        .navbar-expand-lg .navbar-nav .nav-link {
+            color: $white;
+            transition: all .5s;
+            padding-right: 1.5rem;
+            padding-left: 0.5rem; 
+            font-weight: normal;
+             font-size: 12px;
+        }
+
+.carousel-inner {
+    h2{
+        font-size: 100px;
+    }
+    h4{
+        font-size: 50px;
+    }
+    .welcome{
+        height:90vh;
+    }
+}
+ .carousel-indicators{
+    width: 100%;
+    margin: 0;
+       [data-bs-target]{
+        width:300px;
+        position: relative;
+            &:hover::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width:80px;
+                height:3px;
+                background-color:$navColor;
+        }
+       }
+    }
+}
+// header section end
+//about section
+.about{
+    .about-content{
+        max-width: 790px;
+    }
+    .about-cards {
+        img{
+            width: 100%;
+            transition: transform .3s linear;
+        }
+        .layer{
+            color: $white;
+            font-size: 20px;
+            font-weight: 700;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 96%;
+            height: 100%;
+            background: linear-gradient($gradient);
+            visibility: hidden;
+            opacity:0;
+            transition: all .3s linear;
+        }
+         .about-img{
+             &:hover {
+                 background: $numColor;
+                 &::after{
+                    content: "";
+                    position: absolute;
+                    width: 20px;
+                    height: 100%;
+                    right: -8px;
+                    top: 0;
+                    background-color: $white;
+                 }
+                img{
+                    transform: translate(-20px,-10px);
+                }
+                .layer{
+                visibility: visible;
+                opacity: 1;
+                top: -10px;
+                left: -9px;
+            }
+             }
+            
+        } 
+    }
+}
+// about end
+// number start
+.numbers{
+    background-color: $numColor;
+    @include font('Montserrat');
+    color: $white;
+    .numbers-wrapper{
+        padding: 0;
+        text-transform: uppercase;
+        font-size: 14px;
+        div{
+            border-left: 1px solid $borderColor;
+            border-right: 1px solid $borderColor;
+            height: 200px;      
+            display: flex;
+            justify-content: center; 
+        }
+    }
+    span:nth-child(1){
+       font-size: 65px;
+       font-weight: 700;
+    }
+}
+// number end
+
+// services section start
+  .services-boxes{
+    svg{
+        color: $iconColor;
+        font-size: 1.563rem;
+    }
+    span{
+        display: inline-block;
+            font-weight: 500;
+             font-size: 14px;
+             margin-bottom: 10px;
+        transform: translate(-2.5rem);
+        svg{
+            margin-right: 1rem;
+        }
+    }
+    p{
+      font-size: 14px;
+    }
+    .upper-service-box{
+        margin-bottom: 1.5rem;
+    }
+    .line{
+        width: 100%;
+        height: 1px;
+        background-color: $pColor;
+        margin-bottom: 1.5rem;
+    }
+}
+@media (max-width:600px) {
+    .services{
+        .services-boxes{
+            .box{
+                width: 85%;
+            }
+        }
+    }
+}
+//services section end
+//design start 
+.design{
+    background: url("/assets/images/unique-design/bg-unique-design.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    img{
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    .nino-devices {
+   .tablet {
+    width: 322px;
+}
+.mobile {
+    bottom: -60px;
+    left: 50%;
+    margin-left: 140px;
+    width: 150px;
+}
+}
+}
+@media (max-width:600px) {
+    .design{
+        h4{
+            font-size: 20px;
+        }
+        h2{
+            font-size: 25px;
+        }
+        .nino-devices{
+            .tablet{
+                width: 250px;
+            }
+            .mobile{
+                width: 100px;
+                margin-left:50px;
+
+            }
+        }
+    }
+}
+//design end
+//service two start
+.service-two{
+    .container{
+        .img{
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .service-two-title{
+        p{
+            width: 95%;
+            font-size: 13px;
+            margin: 0 auto;
+        }
+    }
+    .accordion{
+        width: 50%;
+        p{
+            font-style: italic;
+        }
+    }
+    .accordion-item{
+        svg,span{
+            color:$numColor;
+        }
+        .accordion-button{
+            border-top: 1px solid #dfdfdf;
+        }
+    }
+    .accordion-body{
+        height: 150px;
+        overflow: auto;
+    }
+    .service-two-content{
+        padding-bottom: 8.5rem;
+    }
+    #carouselExampleInterval{
+        background-color:#dfdfdf87;
+        @extend %carsoul;
+    }
+}
+@media (max-width:768px){
+  .service-two {
+  .accordion{
+      width: 100%;
+  }    
+} 
+}
+//service two end
+
+// tem section start
+.team{
+    .team-cards{
+        .team-card-img{
+            margin: 10px auto;
+            max-width: 300px;
+            transition: all .5s;
+            .overlay{
+                top: 10px;
+                left: 10px;
+                @extend %overlayEffect;
+                .icons{
+                    font-size: 25px;
+                    svg{
+                        background-color: $linkHover;
+                        padding: 10px;
+                        color:$navColor;
+                    }
+                }
+            }
+            &:hover .overlay , &:hover{
+                opacity: 1;
+                visibility: visible;
+                transform: translate(-10px,-10px);
+                box-shadow: 10px 10px 0px 1px $borderColor
+            }
+        }
+    }
+    .card-container{
+        p{
+            font-size: 13px;
+        }
+    }
+}
+
+.team-footer{
+    background-color:#f8f8f8;
+    padding: 50px;
+    .team-logo{
+        width: 15%;
+        cursor: pointer;
+        transition: transform .3s;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+// team section end
+ 
+//work samples start
+.work-samples {
+    .row{
+        margin: 0;
+    }
+    .first-col-work-imgs{
+        padding: 0;
+    }
+    .work-imgs-size{
+        padding: 0;
+    }
+    .squid-img{
+        padding: 0;
+    }
+    .second-col-work-imgs, .left-imgs,.right-imgs{
+        padding: 0;
+
+    }
+    .overlayer{
+        top: 0;
+        left: 0;
+        @extend %overlayEffect;
+    }
+    .hover-effect:hover .overlayer{
+        visibility: visible;
+        opacity: 1;
+    }
+      #carouselExampleInterval2{
+        @extend %carsoul;
+    }
+}
+//work samples end
+// happy-clients starts
+.happy-clients{
+    background-image: url('/assets/images/happy-client/bg-happy-client.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .feedback-img{
+        width: 85px;
+            line-height: 50px;
+        img{
+            border-radius: 50%;
+        }
+    }
+    p{
+        font-size: 14px;
+    }
+    .paragraph{
+        width: 300px;
+    }
+    .underline-par{
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            background-color: $underLine;
+            width: 50px;
+            height: 2px;
+        }
+    }
+}
+// happy-clients end
+// blog start
+.blog{
+    .blog-card{
+        position: relative;
+        font-size: 15px;
+        &:after{
+            position: absolute;
+            content:"15 jan";
+            bottom: 43%;
+            left: 6px;
+            width: 55px;
+            height: 63px;
+            background-color: $numColor;
+            font-size: 21px;
+            color: $white;
+            text-align: center;
+             font-weight: bold;
+        }
+        .blog-par{
+            color: $numColor;
+            margin-top: 10px;
+        }
+        svg{
+              color: $numColor;
+        }
+        .blog-icons{
+            position: relative;
+            margin-top: 10px;
+            &:before{
+                position: absolute;
+                content: "";
+                top:-5px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $pColor;
+                opacity: .3;
+            }
+        }
+    }
+}
+// blog end
+//map start 
+ .map{
+    background: url('/assets/images/map/bg-map.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+        .open-map{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        color: $underLine;
+    }
+    .map-frame{
+        margin-top: 50px;
+        border: 2px solid $underLine;
+    }
+ }
+//map end
+
+//footer start
+footer{
+    background-color: #f8f8f8;
+    .footer-left{
+        .logo{
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        p{
+            font-size: 13px;
+        }
+        .followers{
+            color: #000;
+            font-weight: bold;
+            position: relative;
+            &::after{
+                position: absolute;
+                content: "";
+                bottom:-5px;
+                left: 0;
+                background-color: $pColor;
+                width: 100%;
+                height: 1px;
+                opacity: .3;
+            }
+        }
+        .follow-us{
+            margin-right: 20px;
+        }
+        svg{
+            color: $numColor;
+            margin: 0 5px;
+            font-size: 18px;
+        }
+        input{
+            background-color: white;
+            border: none;
+            width: 186px;
+            height: 42px;
+            padding: 10px;
+        }
+        .subscribe{
+            background-color: $numColor;
+            padding : 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    }
+    .footer-mid{
+        .blog-footer-img{
+            margin-right: 15px;
+        }
+        p{
+            font-size: 14px;
+            &:nth-child(1){
+                color: $numColor;
+            }
+            &:nth-child(1){
+                color: $numColor;
+            }
+            &:nth-child(2){
+                font-style: italic;
+            }
+
+        }
+    }
+    .instagram{
+        gap: 1px;
+    }
+}
+//footer end

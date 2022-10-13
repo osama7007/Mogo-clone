@@ -1,0 +1,47 @@
+@import "variables";
+@import "mixin";
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+@media (max-width:768px) {
+    .container{
+    width: 95%;
+}
+}
+
+h4{
+    @include font('KaushanScript');
+}
+.underlineH{
+    position: relative;
+    margin-bottom: 1.875rem; 
+    padding-bottom: 1.25rem;
+}
+.underlineH::after{
+    content: "";
+    position: absolute;
+    background:$underLine;
+    left: 50%;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    transform: translateX(-50%);
+}   
+p{
+    color: $pColor;
+}
